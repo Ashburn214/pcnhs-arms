@@ -5,8 +5,8 @@
     text-align: center;
     border: 50px solid transparent;
     padding: 8px;
-    border-image: url("../images/border.png") 100 100 stretch;
-    /*     margin: auto; */
+    border-image: url("../images/border.png") 150 150 stretch;
+  
 
 }
 
@@ -15,12 +15,12 @@
     src: url('../fonts/EdwardianScriptITC.ttf');
 }
 
-/* #diploma{
+#diploma{
 	
 	background-color: white;
 	color: black;	
 	max-width: 10in;
-} */
+}
 
 @media print {  
   @page {
@@ -31,6 +31,15 @@
     margin-right: 30mm; /* for compatibility with both A4 and Letter */
   }
 }
+body {
+    page-break-before: avoid;
+    width:100%;
+    height:100%;
+    -webkit-transform: rotate(-90deg) scale(.68,.68); 
+    -moz-transform:rotate(-90deg) scale(.58,.58);
+    zoom: 200%    }
+   @page rotated { size : landscape }
+
 .text1{
 	font-size: 20px;
 	font-weight: bold;
@@ -49,9 +58,7 @@
 	font-family: Times New Roman;
 	font-style: italic;
 	font-weight: bold;
-/* 	word-spacing: 60px; */
-
-/* 	word-spacing: 45px; */
+	word-spacing: 60px;
 	text-align: justify;
 }
 
@@ -66,9 +73,7 @@
 
 #img1{
 	float: left;
-/*  margin: 30px;
-
-	margin: 10px;*/
+	margin: 30px;
 	filter: grayscale(100%);
 	width: 200px;
 	height: 200px;
@@ -77,9 +82,7 @@
 	width: 200px;
 	height: 200px;
 	float: right;
-/* 	margin: 30px;
-=======
-	margin: 10px; */
+	margin: 30px;
 	
 }
 

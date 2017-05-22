@@ -2,7 +2,6 @@
 <?php require_once "../../resources/config.php"; ?>
 <?php include ('include_files/session_check.php'); ?>
 
-
 <html>
   <head>
     <title>Backup Database</title>
@@ -38,7 +37,6 @@
      <!-- Custom Theme Style -->
     <link href="../../assets/css/customstyle.css" rel="stylesheet">
     <link href="../../assets/css/easy-autocomplete-custom.css" rel="stylesheet">
-
   </head>
 
     <body class="nav-md">
@@ -81,7 +79,6 @@
                 <div class="x_content">
                     <div class="personnel-list table-list">
                         <table id="personnelList" class="tablesorter-bootstrap">
-                          <p><strong>Note:  <i class="fa fa-info-circle"></i> </strong> Importing a backup file will <strong>overwrite</strong> the current database.</p>
                             <thead>
                             <tr>
                                 <th>Generated Backup Files</th>
@@ -152,6 +149,7 @@
                                   
                                   echo <<<BULIST
                                           <tr class="odd pointer">
+
                                                         <td class=" "><center>$v[name]</center></td>
                                                         <td class=" "><center>$v[size]</center></td>
                                                         <td class=" "><center>$v[date]</center></td>
@@ -160,7 +158,7 @@
                                                           <a href= "$backup_folder/$v[name]" download class="btn btn-primary btn-xs">
                                                           <i class="fa fa-download"></i>  Download</a>
 
-                                                          <a href= "phpscript/imp.php?file=$v[name]" button type = "submit" class="btn btn-success btn-xs">
+                                                          <a href = "import_db.php?filename=$v[name]&filesize=$v[size]&date=$v[date]" button type="submit" class="btn btn-success btn-xs"  >
                                                           <i class="fa fa-inbox"></i>  Import</a>
 
                                                           <a href = "phpscript/del_db.php?file=$v[name]" button type="submit" class="btn btn-danger btn-xs"  >

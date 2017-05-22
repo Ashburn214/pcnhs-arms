@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+    require_once "resources/config.php";
     date_default_timezone_set('Asia/Manila');
     session_start();
     include_once 'resources/classes/Popover.php';
     if (!isset($_SESSION['logged_in']) && !isset($_SESSION['account_type'])) {
-        //header('Location: login.php');
     } else {
         $account_type = $_SESSION['account_type'];
         header("Location: $account_type/index.php");
     }
+
+    $curr_month = date('F');
+
+    $query = "SELECT * from backups where month = '$curr_month';";
+    $result1 = DB::query($query);
+
+    if (count($result1) > 0) {
+        foreach ($result1 as $row) {
+            if (($curr_month === "June" && $row['status'] == 0) || ($curr_month === "September" && $row['status'] == 0) ||
+                ($curr_month === "December" && $row['status'] == 0) || ($curr_month === "March" && $row['status'] == 0)) {
+
+                $alert_type = "success";
+                $message = "Gentle Reminder: The system is scheduled for quarterly database backup,
+                            login time may take longer than usual.";
+                $popover = new Popover();
+                $popover->set_popover($alert_type, $message);
+                $_SESSION['backup_notif'] = $popover->get_popover();
+            }
+        }
+    }
+
 
 ?>
 <head>
@@ -72,6 +93,10 @@
                         echo $popover->get_popover();
                         session_unset();
                         session_destroy();
+                    }
+                    if (isset($_SESSION['backup_notif'])) {
+                        echo $_SESSION['backup_notif'];
+                        unset($_SESSION['backup_notif']);
                     }
                     ?>
                     <!-- Generate Error Message -->

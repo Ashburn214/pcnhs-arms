@@ -37,9 +37,10 @@
           $_SESSION['accnt_type'] = "SYSTEM ADMINISTRATOR";
           $log_id = null;
           $_SESSION['log_id'] = $log_id;
-          $_SESSION['user_activity'][]= $user_activity;
 
-          header("Location: ../systemadmin/index.php");
+
+          header("Location: ../systemadmin/databasemanagement/phpscript/auto_backup.php");
+
         }else if($row['access_type']=="REGISTRAR" && $verifypw == TRUE && $row['accnt_status'] == "ACTIVE" ) {
           $_SESSION['username'] = $row['username'];
           $_SESSION['first_name'] = $row['first_name'];
@@ -50,12 +51,12 @@
           $_SESSION['accnt_status'] = "ACTIVE";
           $_SESSION['username'] = $username;
           $_SESSION['accnt_type'] = "REGISTRAR";
-
           $log_id = null;
           $_SESSION['log_id'] = $log_id;
-          $_SESSION['user_activity'][]= $user_activity;
 
-          header("Location: ../registrar/index.php");
+
+          header("Location: ../systemadmin/databasemanagement/phpscript/auto_backup.php");
+
         }else {
           $popover = new Popover();
           $popover->set_popover("danger", "You have entered an Invalid Username or Password.");

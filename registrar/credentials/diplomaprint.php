@@ -4,12 +4,6 @@
 <?php session_start(); ?>
 <?php $stud_id = htmlspecialchars($_GET['stud_id'], ENT_QUOTES) ?>
 <?php
-    $date = $_POST['date'];
-    $req_id = $_POST['req_id'];
-    DB::update('requests', array(
-          'date_processed' => $date
-        ), "req_id=%i", $req_id);
-
     if(!isset($_SESSION['generated_diploma'])) {
       $_SESSION['generated_diploma'] = true;
     }else {
@@ -63,7 +57,7 @@
 
     $curr_year = date("Y");
 
-    $curr_principal = "SELECT * FROM signatories WHERE yr_ended = '$curr_year'
+    $curr_principal = "SELECT * FROM SIGNATORIES WHERE yr_ended = '$curr_year'
                         AND position LIKE 'PRINCIPAL';";
     $curr_p = DB::query($curr_principal);
     if (count($curr_p) > 0) {
@@ -148,7 +142,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <style type="text/css" media="screen"></style>
 
       <style type="text/css" media="print">
        .no-print { display: none; }

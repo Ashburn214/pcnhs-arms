@@ -206,56 +206,6 @@ OPTION2;
             </div>
         </div>
     <!-- /page content -->
-      <!-- /modals -->
-        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel2"><i class="fa fa-file-image-o"></i> Set Profile Picture</h4>
-                    </div>
-
-                    <div class="modal-body">
-    <div class="container" style="padding-top:50px">
-    <h2>Simple Example of Croping Image with php and AJAX</h2>
-            <div class="row">
-                <div class="col-sm-2">
-                    <img class="img-circle" id="avatar-edit-img" height="128" data-src="prof_pic/default.jpg"  data-holder-rendered="true" style="width: 140px; height: 140px;" src="prof_pic/default.jpg"/>
-                </div>
-                <div class="col-sm-10"><a type="button" class="btn btn-primary" id="change-pic">Change Image</a>
-                <div id="changePic" class="" style="display:none">
-                    <form id="cropimage" method="post" enctype="multipart/form-data" action="prof_pic/profile.php">
-                        <label>Upload your image</label><input type="file" name="photoimg" id="photoimg" />
-                        <input type="hidden" name="hdn-profile-id" id="hdn-profile-id" value="1" />
-                        <input type="hidden" name="hdn-x1-axis" id="hdn-x1-axis" value="" />
-                        <input type="hidden" name="hdn-y1-axis" id="hdn-y1-axis" value="" />
-                        <input type="hidden" name="hdn-x2-axis" value="" id="hdn-x2-axis" />
-                        <input type="hidden" name="hdn-y2-axis" value="" id="hdn-y2-axis" />
-                        <input type="hidden" name="hdn-thumb-width" id="hdn-thumb-width" value="" />
-                        <input type="hidden" name="hdn-thumb-height" id="hdn-thumb-height" value="" />
-                        <input type="hidden" name="action" value="" id="action" />
-                        <input type="hidden" name="image_name" value="" id="image_name" />
-                        
-                        <div id='preview-avatar-profile'>
-                    </div>
-                    <div id="thumbs" style="padding:5px; width:600p"></div>
-                    </form>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" id="btn-crop" class="btn btn-primary">Crop & Save</button>
-                </div>
-            </div>
-        </div>
-        
-        </div>
-    </div>
-    </body>
-                    </div>
-                </div>
-            </div>
-        </div>
     <!-- /modals -->
     <!-- Footer -->
     <?php include "../../resources/templates/admin/footer.php"; ?>

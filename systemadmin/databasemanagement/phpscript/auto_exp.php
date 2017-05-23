@@ -1,8 +1,6 @@
 <?php
-require_once "../../../resources/config.php";
-include ('../../../resources/classes/Popover.php');
 
-session_start();
+include ('../../../resources/classes/Popover.php');
 
 $host = 'localhost';
 $user = 'root';
@@ -122,7 +120,11 @@ $popover->set_popover($alert_type, $message);
 
 $_SESSION['db_msg_generate'] = $popover->get_popover();
 
+    if ($account_type == "registrar") {
+      header("Location: ../../../registrar/index.php");
+    }else if ($account_type == "systemadmin"){
+      header("Location: ../exp_db.php");
+          
+    }
 
-header("location: ../exp_db.php");
- 
 ?>

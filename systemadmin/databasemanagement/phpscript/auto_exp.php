@@ -1,11 +1,11 @@
 <?php
-
+require_once "../../../resources/config.php";
 include ('../../../resources/classes/Popover.php');
 
 $host = 'localhost';
-$user = 'root';
-$password = 'root';
-$database = 'pcnhsdb';
+$user = DB::$user;
+$password = DB::$password;
+$database = DB::$dbName;
 $username = $_SESSION['username'];
 define('HOST', $host ) ; 
 define('USER', $user ) ; 

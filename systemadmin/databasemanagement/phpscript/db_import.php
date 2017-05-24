@@ -6,6 +6,9 @@ require_once "../../personnelmanagement/bcrypt/Bcrypt.php";
 
 session_start();
 
+$user_db = DB::$user;
+$password_db = DB::$password;
+
 $db_uname = htmlspecialchars(filter_var($_POST['db_uname'], FILTER_SANITIZE_STRING));
 $db_password = htmlspecialchars(filter_var($_POST['db_pw'], FILTER_SANITIZE_STRING));
 $password = htmlspecialchars(filter_var($_POST['pw'], FILTER_SANITIZE_STRING));
@@ -21,7 +24,7 @@ if (count($resultCheckPw) > 0) {
   foreach ($resultCheckPw as $row) {
   		$verifypw = Bcrypt::checkPassword($password, $row['password']);
 			if ($verifypw == TRUE) { 
-				if ($db_uname === "root" && $db_password === "root") {
+				if ($db_uname === $user_db && $db_password === $password_db) {
 					$mysqlImport = new MySQLImporter("localhost", $db_uname, $db_password);
 					
 					$mysqlImport->doImport("./myBackups/$file", "pcnhsdb", true, true);

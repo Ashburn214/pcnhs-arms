@@ -1,28 +1,7 @@
 <!DOCTYPE html>
 <?php require_once "../../resources/config.php"; ?>
 <?php include ('include_files/session_check.php'); ?>
-<?php
-  if(!isset($_SESSION['access_db']) && !$_SESSION['access_db']) {
-    header('location: admin_login.php');
-  }
-  $time_a = time();
-  $session_timeout_a = 180; //seconds
-  if (isset($_SESSION['last_activity_a']) && ($time_a - $_SESSION['last_activity_a']) > $session_timeout_a) {
-      unset($_SESSION['access_db']);
-      header("location: admin_login.php");
-  }
-  $_SESSION['last_activity_a'] = $time_a;
-  if (isset($_SESSION['logged_in']) && isset($_SESSION['account_type'])) {
-      if ($_SESSION['account_type'] != "systemadmin") {
-          echo "<p>Access Failed <a href='../../index.php'>Back to Home</a></p>";
-          die();
-      }
-  }
-  else {
 
-      header('Location: admin_login.php');
-  }
-?>
 
 <html>
   <head>

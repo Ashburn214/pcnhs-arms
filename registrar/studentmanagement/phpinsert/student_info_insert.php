@@ -34,7 +34,7 @@
 	if($gpa > 99.99 || $gpa < 75) {
 		$willInsert = false;
 		$alert_type = "danger";
-		$error_message = "You have entered an invalid Average Grade.";
+		$error_message = "Ooops. The system did not accept the value that you entered. You have entered an invalid Average Grade.";
 		$popover = new Popover();
 		$popover->set_popover($alert_type, $error_message);
 		$_SESSION['error_pop'] = $popover->get_popover();
@@ -49,7 +49,7 @@
 	if(intval($year1) > intval($year2) || intval($year2) != (intval($year1)+1) ) {
 		$willInsert = false;
 		$alert_type = "danger";
-		$error_message = "You have entered an invalid Primary School Year.";
+		$error_message = "Ooops. The system did not accept the value that you entered. You have entered an Invalid Primary School Year.";
 		$popover = new Popover();
 		$popover->set_popover($alert_type, $error_message);
 		$_SESSION['error_pop'] = $popover->get_popover();
@@ -60,7 +60,7 @@
 
 		$willInsert = false;
 		$alert_type = "danger";
-		$error_message = "Cannot insert to database. Please make sure that you have input a valid value.";
+		$error_message = "Ooops. The system did not accept the value that you entered. Please make sure that the form is complete before adding student.";
 		$popover = new Popover();
 		$popover->set_popover($alert_type, $error_message);
 		$_SESSION['error_pop'] = $popover->get_popover();
@@ -70,12 +70,12 @@
 // Duplicate Checker
 	$selectStudents = "SELECT * from students where stud_id = '$stud_id' and (first_name = '$first_name' and last_name = '$last_name' and birth_date = '$birth_date');";
 
-	$count = DB::count($selectStudents);
+	$res = DB::query($selectStudents);
 
-	if ($count > 0) {
+	if (count($res) > 0) {
 		$willInsert = false;
 			$alert_type = "danger";
-			$error_message = "Duplicate Student found.";
+			$error_message = "Ooops. The system did not accept the value that you entered. Duplicate Student found.";
 			$popover = new Popover();
 			$popover->set_popover($alert_type, $error_message);
 			$_SESSION['error_pop'] = $popover->get_popover();

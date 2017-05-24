@@ -1,12 +1,13 @@
 <?php
 
 include ('../../../resources/classes/Popover.php');
+include ('../../../resources/config.php');
 session_start();
 
 $host = 'localhost';
-$user = 'root';
-$password = 'root';
-$database = 'pcnhsdb';
+$user = DB::$user;
+$password = DB::$password;
+$database = DB::$dbName;
     
 define('HOST', $host ) ; 
 define('USER', $user ) ; 

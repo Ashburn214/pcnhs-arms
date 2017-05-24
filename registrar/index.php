@@ -184,7 +184,7 @@ if (isset($_SESSION['logged_in']) && isset($_SESSION['account_type'])) {
 					</div>
 					</a>
 					<a href="credentials/requests.php">
-						<div id="dash-4" class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+						<div id="dash-2" class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
 							<div class="tile-stats">
 								<div class="icon"><i class="glyphicon glyphicon-check"></i></div>
 								<?php
@@ -201,7 +201,7 @@ if (isset($_SESSION['logged_in']) && isset($_SESSION['account_type'])) {
 						</div>
 					</a>
 					<a href="credentials/unclaimed.php">
-						<div id="dash-2" class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+						<div id="dash-3" class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
 							<div class="tile-stats">
 								<div class="icon"><i class="glyphicon glyphicon-hourglass"></i></div>
 								<?php
@@ -218,7 +218,7 @@ if (isset($_SESSION['logged_in']) && isset($_SESSION['account_type'])) {
 						</div>
 					</a>
 					<a href="credentials/released.php">
-						<div id="dash-3" class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+						<div id="dash-4" class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
 							<div class="tile-stats">
 								<div class="icon"><i class="fa fa-paper-plane"></i></div>
 								<?php
@@ -385,20 +385,20 @@ UNCLAIMED;
 				  {
 				    element: "#dash-2",
 				    placement: "bottom",
-				    title: "Unclaimed Credentials Count",
-				    content: "This will show you the number of requested credentials that are not yet claimed."
+				    title: "New Requests Count",
+				    content: "This will show you the number of new requests count."
 				  },
 				  {
 				    element: "#dash-3",
 				    placement: "bottom",
-				    title: "Released Credentials Count",
-				    content: "This will show you the number of released credentials."
+				    title: "Unclaimed Credentials Count",
+				    content: "This will show you the number of requested credentials that are not yet claimed."
 				  },
 				  {
 				    element: "#dash-4",
 				    placement: "bottom",
-				    title: "Total Transactions Count",
-				    content: "This will show you the number of transactions made."
+				    title: "Released Credentials Count",
+				    content: "This will show you the number of released credentials."
 				  },
 				  {
 				    element: "#button-1",

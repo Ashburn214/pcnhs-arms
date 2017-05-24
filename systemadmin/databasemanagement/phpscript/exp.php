@@ -5,10 +5,10 @@ include ('../../../resources/classes/Popover.php');
 session_start();
 
 $host = 'localhost';
-$user = 'root';
-$password = 'root';
-$database = 'pcnhsdb';
-$username = $_SESSION['username'];
+$user = DB::$user;
+$password = DB::$password;
+$database = DB::$dbName;
+
 define('HOST', $host ) ; 
 define('USER', $user ) ; 
 define('PASSWORD', $password ) ; 

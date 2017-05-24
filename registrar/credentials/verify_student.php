@@ -142,7 +142,7 @@ STUDLIST;
                           <span class="">
                           <center>
                             <a class="btn btn-default" data-toggle="tooltip" data-placement="top"
-                               title="The record of this student is still incomplete. You cannot add credential request with this student."><i class="fa fa-plus"></i> Add Request</a>
+                               title="The record of this student is still incomplete. You cannot add new credential request for this student."><i class="fa fa-plus"></i> Add Request</a>
 
                             <a href="../../registrar/studentmanagement/student_info.php?stud_id=$stud_id" class="btn btn-default"><i class="fa fa-user"></i> View Profile</a>
                             </center>

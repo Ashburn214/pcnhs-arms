@@ -186,10 +186,10 @@
 				if($fin_grade < 75 && $fin_grade != 0 && $curr_code != "K-12") {
 					$credit_earned = 0;
 					$comment ="FAILED";
-					$total_credit -= 1;
-					if($total_credit < 1) {
-						$total_credit = 0;
-					}
+					// $total_credit -= 1;
+					// if($total_credit < 1) {
+					// 	$total_credit = 0;
+					// }
 				}else {
 					$comment = "PASSED";
 				}

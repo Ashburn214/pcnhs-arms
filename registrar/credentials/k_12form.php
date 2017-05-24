@@ -417,7 +417,7 @@
                     <!-- First Year -->
                             <?php
                                     $stud_id = $_GET['stud_id'];
-                                    $query = "SELECT distinct(schl_name) as 'schl_name', studentsubjects.yr_level, studentsubjects.schl_year FROM pcnhsdb.studentsubjects left join subjects on studentsubjects.subj_id = subjects.subj_id left join pcnhsdb.grades on studentsubjects.stud_id = grades.stud_id where studentsubjects.yr_level = 1 and studentsubjects.stud_id = '$stud_id';";
+                                    $query = "SELECT distinct(schl_name) as 'schl_name', studentsubjects.yr_level, studentsubjects.schl_year FROM pcnhsdb.studentsubjects NATURAL JOIN subjects NATURAL JOIN grades where studentsubjects.yr_level = 1 and studentsubjects.stud_id = '$stud_id';";
                                     $result = DB::query($query);
                                     if (count($result) > 0) {
                       								foreach ($result as $row) {
@@ -560,7 +560,7 @@ A1;
                       <div id="info">
                           <?php
                             $stud_id = $_GET['stud_id'];
-                            $query = "SELECT distinct(schl_name) as 'schl_name', studentsubjects.yr_level, studentsubjects.schl_year FROM pcnhsdb.studentsubjects left join subjects on studentsubjects.subj_id = subjects.subj_id left join pcnhsdb.grades on studentsubjects.stud_id = grades.stud_id where studentsubjects.yr_level = 2 and studentsubjects.stud_id = '$stud_id';";
+                            $query = "SELECT distinct(schl_name) as 'schl_name', studentsubjects.yr_level, studentsubjects.schl_year FROM pcnhsdb.studentsubjects NATURAL JOIN subjects NATURAL JOIN grades where studentsubjects.yr_level = 2 and studentsubjects.stud_id = '$stud_id';";
                             $result = DB::query($query);
                             if (count($result) > 0) {
               								foreach ($result as $row) {
@@ -701,7 +701,7 @@ A1;
                         <div id="info">
                              <?php
                                   $stud_id = $_GET['stud_id'];
-                                  $query = "SELECT distinct(schl_name) as 'schl_name', studentsubjects.yr_level, studentsubjects.schl_year FROM pcnhsdb.studentsubjects left join subjects on studentsubjects.subj_id = subjects.subj_id left join pcnhsdb.grades on studentsubjects.stud_id = grades.stud_id where studentsubjects.yr_level = 3 and studentsubjects.stud_id = '$stud_id';";
+                                  $query = "SELECT distinct(schl_name) as 'schl_name', studentsubjects.yr_level, studentsubjects.schl_year FROM pcnhsdb.studentsubjects NATURAL JOIN subjects NATURAL JOIN grades where studentsubjects.yr_level = 3 and studentsubjects.stud_id = '$stud_id';";
                                   $result = DB::query($query);
                                   if (count($result) > 0) {
                     								foreach ($result as $row) {
@@ -839,7 +839,7 @@ A4;
                       <div id="info">
                               <?php
                                   $stud_id = $_GET['stud_id'];
-                                  $query = "SELECT distinct(schl_name) as 'schl_name', studentsubjects.yr_level, studentsubjects.schl_year FROM pcnhsdb.studentsubjects left join subjects on studentsubjects.subj_id = subjects.subj_id left join pcnhsdb.grades on studentsubjects.stud_id = grades.stud_id where studentsubjects.yr_level = 4 and studentsubjects.stud_id = '$stud_id';";
+                                  $query = "SELECT distinct(schl_name) as 'schl_name', studentsubjects.yr_level, studentsubjects.schl_year FROM pcnhsdb.studentsubjects NATURAL JOIN subjects NATURAL JOIN grades where studentsubjects.yr_level = 4 and studentsubjects.stud_id = '$stud_id';";
                                   $result = DB::query($query);
                                   if (count($result) > 0) {
                     								foreach ($result as $row) {
@@ -1005,7 +1005,7 @@ A4;
 
                             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I certify that this is a true copy of the records of <u><b><?php echo $name ?></b></u> This student is eligible on the <u><b><?php echo $DADay ?><?php echo $gram1 ?></b></u> day of <u><b><?php echo $DAmonth ?></b></u> <u><b><?php echo $DAyear ?></b></u> for admission to <u><b><?php echo $admitted_to ?></b></u> as <?php echo $gram ?> <?php echo $stat ?> student and <?php echo $formgender ?> has no property and/or money accountability in this school.</p>
 
-                            <p id="b7-r1-p1">REMARKS: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u><?php echo $request_purpose ?></u></p>
+                            <p id="b7-r1-p1">REMARKS: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u> ISSSUED FOR <?php echo $request_purpose ?></u></p>
 
                             <p id="b7-r1-p1">NOTE: A mark, erasure or alternation of any entry invalidates this form.</p>
 
